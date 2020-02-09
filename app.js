@@ -1,7 +1,7 @@
 /*
  * @Author: hentaitabako
  * @Date: 2020-01-06 08:02:01
- * @LastEditTime : 2020-01-06 17:08:08
+ * @LastEditTime : 2020-02-09 21:48:49
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /SpeedUpExt/app.js
@@ -15,10 +15,14 @@ $(function()
     <span>5</span>
   </div>
   `
-  $('#playerWrap').after(speed_up_inner_html);
-  $("[type='range']").on('change', (e)=> {
-    const play_back_rate = e.target.value;
-    $('video').prop('playbackRate', play_back_rate)
-    console.log(e.target.value);
-  })
+  // 又不是不能用
+  setTimeout(() => {
+    $('#playerWrap').after(speed_up_inner_html);
+    $("[type='range']").on('change', (e)=> {
+      const play_back_rate = e.target.value;
+      $('video').prop('playbackRate', play_back_rate)
+      console.log(e.target.value);
+    })
+  }, 5000);
+
 });
